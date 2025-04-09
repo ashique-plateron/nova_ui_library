@@ -46,16 +46,21 @@ class MyWidget extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
-          context.novaTokens.borderRadius.superSoft,
+          context.novaTokens.borderRadius.xl,
         ),
         color: context.novaTokens.colors.novaBlush.alpha40,
       ),
       child: Center(
         child: TextButton(
           onPressed: () {},
-          child: Text(
-            'Hello Nova',
-            style: Theme.of(context).textTheme.bodySmall,
+          child: Row(
+            children: [
+              Text(
+                'Hello Nova',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              Assets.icons.icons24x24.discount.svg(),
+            ],
           ),
         ),
       ),
