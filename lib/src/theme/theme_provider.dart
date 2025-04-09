@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tokens/design_tokens.dart';
+import './tokens/design_tokens.dart';
 import 'nova_theme_extension.dart';
 
 class ThemeProvider {

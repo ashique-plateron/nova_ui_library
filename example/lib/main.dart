@@ -42,11 +42,11 @@ class MyWidget extends StatelessWidget {
         context.novaTokens.spacing.x20,
       ),
       margin: EdgeInsets.all(
-        context.novaTokens.spacing.x12,
+        context.novaTokens.spacing.x16,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
-          context.novaTokens.borderRadius.hard,
+          context.novaTokens.borderRadius.superSoft,
         ),
         color: context.novaTokens.colors.novaBlush.alpha40,
       ),
