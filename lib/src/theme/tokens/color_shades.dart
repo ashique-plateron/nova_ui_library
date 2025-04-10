@@ -53,6 +53,7 @@ class ColorShades {
   Color get solid700 => solid['700'] ?? Colors.transparent;
   Color get solid800 => solid['800'] ?? Colors.transparent;
   Color get solid900 => solid['900'] ?? Colors.transparent;
+  Color get solid850 => solid['850'] ?? Colors.transparent;
 
   // Getters for alpha colors
   Color get alpha10 => _getAlphaColor(10);
@@ -65,6 +66,7 @@ class ColorShades {
   Color get alpha80 => _getAlphaColor(80);
   Color get alpha90 => _getAlphaColor(90);
   Color get alphaBase => _getAlphaColor(alpha['base'] ?? 0.0);
+  Color get alpha05 => _getAlphaColor(5);
 
   // Helper method to create a color with alpha
   Color _getAlphaColor(double alphaValue) {

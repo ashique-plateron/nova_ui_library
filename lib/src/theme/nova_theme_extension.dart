@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tokens/design_tokens.dart';
+import 'tokens/design_tokens.dart';
 
 /// Extension on BuildContext to easily access Nova design tokens
 extension NovaThemeExtension on BuildContext {

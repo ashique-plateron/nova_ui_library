@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:nova_ui_library/src/theme/tokens/font_family.dart';
 
 import 'border_radius_tokens.dart';
 import 'color_tokens.dart';
@@ -17,6 +18,7 @@ class NovaDesignTokens {
   final LineHeightTokens lineHeight;
   final LetterSpacingTokens letterSpacing;
   final SpacingTokens spacing;
+  final NovaFontFamily fontFamily;
 
   const NovaDesignTokens({
     required this.borderRadius,
@@ -25,6 +27,7 @@ class NovaDesignTokens {
     required this.lineHeight,
     required this.letterSpacing,
     required this.spacing,
+    required this.fontFamily,
   });
 
   static Future<NovaDesignTokens> fromAsset() async {
@@ -40,6 +43,8 @@ class NovaDesignTokens {
       lineHeight: LineHeightTokens.fromJson(jsonMap['line-height']),
       letterSpacing: LetterSpacingTokens.fromJson(jsonMap['letter-spacing']),
       spacing: SpacingTokens.fromJson(jsonMap['spacing']),
+      //! Add font family tokens here
+      fontFamily: NovaFontFamily(inter: 'Inter'),
     );
   }
 }

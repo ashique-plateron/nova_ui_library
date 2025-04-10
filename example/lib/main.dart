@@ -3,27 +3,21 @@ import 'package:nova_ui_library/nova_ui_library.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await NovaThemeManager.instance.initialize();
 
-  // Initialize the theme provider
-  final themeProvider = ThemeProvider();
-  await themeProvider.initialize();
-
-  runApp(MyApp(themeProvider: themeProvider));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final ThemeProvider themeProvider;
-
   const MyApp({
     super.key,
-    required this.themeProvider,
   });
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "App Name",
-      theme: themeProvider.theme,
+      theme: NovaThemeManager.instance.theme,
       home: Scaffold(
         body: MyWidget(),
       ),
@@ -48,7 +42,7 @@ class MyWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           context.novaTokens.borderRadius.xl,
         ),
-        color: context.novaTokens.colors.novaBlush.alpha40,
+        color: context.novaTokens.colors.novaRage.baseColor,
       ),
       child: Center(
         child: TextButton(
@@ -57,9 +51,8 @@ class MyWidget extends StatelessWidget {
             children: [
               Text(
                 'Hello Nova',
-                style: Theme.of(context).textTheme.bodySmall,
+                style: NovaThemeManager.instance.textStyles.s.regular,
               ),
-              Assets.icons.icons24x24.discount.svg(),
             ],
           ),
         ),

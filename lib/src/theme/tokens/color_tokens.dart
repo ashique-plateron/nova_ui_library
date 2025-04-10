@@ -4,11 +4,15 @@ import 'color_shades.dart';
 
 /// Color tokens with shades
 class ColorTokens {
-  final ColorShades mignightBlack;
+  final ColorShades midnightBlack;
   final ColorShades lilacHaze;
   final ColorShades novaRage;
   final ColorShades novaBlush;
   final ColorShades morningFog;
+  final ColorShades novaSky;
+  final ColorShades novaFury;
+  final ColorShades novaLeaf;
+  final ColorShades novaGold;
   final Color novaBronze;
   final Color novaDeep;
   final Color novaFern;
@@ -19,7 +23,7 @@ class ColorTokens {
   final Color universalWhite;
 
   const ColorTokens({
-    required this.mignightBlack,
+    required this.midnightBlack,
     required this.lilacHaze,
     required this.novaRage,
     required this.novaBlush,
@@ -32,11 +36,15 @@ class ColorTokens {
     required this.novaSplash,
     required this.universalBlack,
     required this.universalWhite,
+    required this.novaSky,
+    required this.novaFury,
+    required this.novaLeaf,
+    required this.novaGold,
   });
 
   factory ColorTokens.fromJson(Map<String, dynamic> json) {
     return ColorTokens(
-      mignightBlack: ColorShades.fromJson(json['mignight-black']),
+      midnightBlack: ColorShades.fromJson(json['midnight-black']),
       lilacHaze: ColorShades.fromJson(json['lilac-haze']),
       novaRage: ColorShades.fromJson(json['nova-rage']),
       novaBlush: ColorShades.fromJson(json['nova-blush']),
@@ -49,6 +57,10 @@ class ColorTokens {
       novaSplash: colorFromHex(json['nova-splash']['value']),
       universalBlack: colorFromHex(json['universal-black']['value']),
       universalWhite: colorFromHex(json['universal-white']['value']),
+      novaSky: ColorShades.fromJson(json['nova-sky']),
+      novaFury: ColorShades.fromJson(json['nova-fury']),
+      novaLeaf: ColorShades.fromJson(json['nova-leaf']),
+      novaGold: ColorShades.fromJson(json['nova-gold']),
     );
   }
 

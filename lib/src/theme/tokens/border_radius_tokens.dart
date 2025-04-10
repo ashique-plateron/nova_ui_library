@@ -39,3 +39,12 @@ class BorderRadiusTokens {
     );
   }
 }
+
+
+class NovaBorderStyles{
+
+
+
+  
+
+}

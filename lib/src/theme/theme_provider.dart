@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tokens/design_tokens.dart';
+import 'tokens/design_tokens.dart';
 import 'nova_theme_extension.dart';
 
 class ThemeProvider {
@@ -27,7 +27,7 @@ class ThemeProvider {
         onPrimary: _tokens.colors.universalWhite,
         onSecondary: _tokens.colors.universalWhite,
         onError: _tokens.colors.universalWhite,
-        onSurface: _tokens.colors.mignightBlack.solid900,
+        onSurface: _tokens.colors.midnightBlack.solid900,
       ),
       textTheme: TextTheme(
         displayLarge: TextStyle(
@@ -119,7 +119,7 @@ class ThemeProvider {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_tokens.borderRadius.m),
-          borderSide: BorderSide(color: _tokens.colors.mignightBlack.solid300),
+          borderSide: BorderSide(color: _tokens.colors.midnightBlack.solid300),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_tokens.borderRadius.m),
