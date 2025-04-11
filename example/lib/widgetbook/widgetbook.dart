@@ -5,21 +5,18 @@ import 'package:nova_ui_library/nova_ui_library.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-// Import the generated directories variable
-
-import 'components/button.dart';
 import 'spacing_catalog/spacing_catalog.dart';
 
 final directories = [
-  WidgetbookComponent(
-    name: 'NovaButton',
-    useCases: [
-      WidgetbookUseCase(
-        name: 'Button Catalog',
-        builder: (context) => novaButtonCatalog(context),
-      ),
-    ],
-  ),
+  // WidgetbookComponent(
+  //   name: 'NovaButton',
+  //   useCases: [
+  //     WidgetbookUseCase(
+  //       name: 'Button Catalog',
+  //       builder: (context) => novaButtonCatalog(context),
+  //     ),
+  //   ],
+  // ),
   WidgetbookFolder(
     name: 'Design System',
     children: [
@@ -29,6 +26,15 @@ final directories = [
           WidgetbookUseCase(
             name: 'Spacing Catalog',
             builder: (context) => const SpacingCatalog(),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Colors',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Colors Catalog',
+            builder: (context) => const NovaColorCatalog(),
           ),
         ],
       ),
