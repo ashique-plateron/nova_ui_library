@@ -55,6 +55,11 @@ class NovaThemeManager {
     return _textStyles;
   }
 
+  NovaDesignTokens get designTokens {
+    _assertInitialized();
+    return _designTokens;
+  }
+
   /// Create the theme based on design tokens
   ThemeData _createTheme() {
     return ThemeData(

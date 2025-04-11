@@ -36,32 +36,32 @@ class BaseColors {
   factory BaseColors.primaryBaseColorsFromToken(ColorTokens tokens) {
     return BaseColors(
       background: BackgroundActionColors(
-        primaryDefault: tokens.novaRage.solid600,
-        primaryHover: tokens.novaRage.solid700,
-        primaryPressed: tokens.novaRage.solid800,
-        primaryDisabled: tokens.novaRage.solid300,
+        defaultColor: tokens.novaRage.solid600,
+        hover: tokens.novaRage.solid700,
+        pressed: tokens.novaRage.solid800,
+        disabled: tokens.novaRage.solid300,
       ),
       border: BorderColors(
-        primaryDefault: tokens.novaRage.solid800,
-        primaryHover: tokens.novaRage.solid800,
-        primaryPressed: tokens.novaRage.solid800,
-        primaryDisabled: tokens.novaRage.solid400,
+        defaultColor: tokens.novaRage.solid800,
+        hover: tokens.novaRage.solid800,
+        pressed: tokens.novaRage.solid800,
+        disabled: tokens.novaRage.solid400,
       ),
     );
   }
   factory BaseColors.secondaryBaseColorsFromToken(ColorTokens tokens) {
     return BaseColors(
       background: BackgroundActionColors(
-        primaryDefault: tokens.novaRage.alpha10,
-        primaryHover: tokens.novaRage.alpha20,
-        primaryPressed: tokens.novaRage.alpha40,
-        primaryDisabled: tokens.novaRage.alpha05,
+        defaultColor: tokens.novaRage.alpha10,
+        hover: tokens.novaRage.alpha20,
+        pressed: tokens.novaRage.alpha40,
+        disabled: tokens.novaRage.alpha05,
       ),
       border: BorderColors(
-        primaryDefault: tokens.novaRage.alphaBase,
-        primaryHover: tokens.novaRage.alpha05,
-        primaryPressed: tokens.novaRage.alpha10,
-        primaryDisabled: tokens.novaRage.alphaBase,
+        defaultColor: tokens.novaRage.alphaBase,
+        hover: tokens.novaRage.alpha05,
+        pressed: tokens.novaRage.alpha10,
+        disabled: tokens.novaRage.alphaBase,
       ),
     );
   }
@@ -69,65 +69,65 @@ class BaseColors {
   factory BaseColors.alternateBaseColorsFromToken(ColorTokens tokens) {
     return BaseColors(
       background: BackgroundActionColors(
-        primaryDefault: tokens.novaRage.solid600,
-        primaryHover: tokens.novaRage.solid700,
-        primaryPressed: tokens.novaRage.solid800,
-        primaryDisabled: tokens.novaRage.solid300,
+        defaultColor: tokens.universalWhite,
+        hover: tokens.morningFog.solid850,
+        pressed: tokens.morningFog.solid850,
+        disabled: tokens.morningFog.solid900,
       ),
       border: BorderColors(
-        primaryDefault: tokens.novaRage.solid800,
-        primaryHover: tokens.novaRage.solid800,
-        primaryPressed: tokens.novaRage.solid800,
-        primaryDisabled: tokens.novaRage.solid400,
+        defaultColor: tokens.morningFog.solid600,
+        hover: tokens.morningFog.solid600,
+        pressed: tokens.morningFog.solid500,
+        disabled: tokens.morningFog.solid700,
       ),
     );
   }
   factory BaseColors.tertiaryBaseColorsFromToken(ColorTokens tokens) {
     return BaseColors(
       background: BackgroundActionColors(
-        primaryDefault: tokens.novaRage.solid600,
-        primaryHover: tokens.novaRage.solid700,
-        primaryPressed: tokens.novaRage.solid800,
-        primaryDisabled: tokens.novaRage.solid300,
+        defaultColor: tokens.universalWhite,
+        hover: tokens.novaRage.alphaBase,
+        pressed: tokens.novaRage.alpha05,
+        disabled: tokens.universalWhite,
       ),
       border: BorderColors(
-        primaryDefault: tokens.novaRage.solid800,
-        primaryHover: tokens.novaRage.solid800,
-        primaryPressed: tokens.novaRage.solid800,
-        primaryDisabled: tokens.novaRage.solid400,
+        defaultColor: tokens.novaRage.solid600,
+        hover: tokens.novaRage.solid600,
+        pressed: tokens.novaRage.solid700,
+        disabled: tokens.novaRage.solid300,
       ),
     );
   }
 }
 
 abstract class PrimaryActionColors {
-  final Color primaryDefault;
-  final Color primaryHover;
-  final Color primaryPressed;
-  final Color primaryDisabled;
+  final Color defaultColor;
+  final Color hover;
+  final Color pressed;
+  final Color disabled;
 
   PrimaryActionColors({
-    required this.primaryDefault,
-    required this.primaryHover,
-    required this.primaryPressed,
-    required this.primaryDisabled,
+    required this.defaultColor,
+    required this.hover,
+    required this.pressed,
+    required this.disabled,
   });
 }
 
 class BackgroundActionColors extends PrimaryActionColors {
   BackgroundActionColors({
-    required super.primaryDefault,
-    required super.primaryHover,
-    required super.primaryPressed,
-    required super.primaryDisabled,
+    required super.defaultColor,
+    required super.hover,
+    required super.pressed,
+    required super.disabled,
   });
 }
 
 class BorderColors extends PrimaryActionColors {
   BorderColors({
-    required super.primaryDefault,
-    required super.primaryHover,
-    required super.primaryPressed,
-    required super.primaryDisabled,
+    required super.defaultColor,
+    required super.hover,
+    required super.pressed,
+    required super.disabled,
   });
 }
