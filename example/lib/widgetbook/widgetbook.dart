@@ -5,20 +5,7 @@ import 'package:nova_ui_library/nova_ui_library.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-import 'components/border_radius_catalog.dart';
-import 'components/typography_catalog.dart';
-import 'spacing_catalog/spacing_catalog.dart';
-
 final directories = [
-  // WidgetbookComponent(
-  //   name: 'NovaButton',
-  //   useCases: [
-  //     WidgetbookUseCase(
-  //       name: 'Button Catalog',
-  //       builder: (context) => novaButtonCatalog(context),
-  //     ),
-  //   ],
-  // ),
   WidgetbookFolder(
     name: 'Design System',
     children: [
@@ -60,6 +47,20 @@ final directories = [
       ),
     ],
   ),
+  // WidgetbookFolder(
+  //   name: 'Components',
+  //   children: [
+  //     WidgetbookComponent(
+  //       name: 'Buttons',
+  //       useCases: [
+  //         WidgetbookUseCase(
+  //           name: 'Button Playgroud',
+  //           builder: (context) => const SpacingCatalog(),
+  //         ),
+  //       ],
+  //     ),
+  //   ],
+  // ),
 ];
 
 void main() async {
