@@ -14,17 +14,21 @@
 			"detail": ""
 		},
 		{
-			"type": "flutter",
-			"command": "flutter",
-			"args": [
-				"build",
-				"web",
-				"-t example/lib/widgetbook/widgetbook.dart"
-			],
+			"type": "shell",
+			"command": "cd example && flutter build web -t lib/widgetbook/widgetbook.dart",
 			"group": "build",
 			"problemMatcher": [],
 			"label": "flutter: Build widgetbook web app",
 			"detail": ""
+		},
+		{
+			"type": "shell",
+			"command": "firebase deploy --only hosting",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "firebase: Deploy to Firebase",
+			"detail": "Deploys the built web app to Firebase hosting",
+			"dependsOn": ["flutter: Build widgetbook web app"]
 		}
 	]
 }
