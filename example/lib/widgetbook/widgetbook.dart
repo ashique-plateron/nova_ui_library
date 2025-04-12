@@ -5,6 +5,8 @@ import 'package:nova_ui_library/nova_ui_library.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
+import 'components/border_radius_catalog.dart';
+import 'components/typography_catalog.dart';
 import 'spacing_catalog/spacing_catalog.dart';
 
 final directories = [
@@ -35,6 +37,24 @@ final directories = [
           WidgetbookUseCase(
             name: 'Colors Catalog',
             builder: (context) => const NovaColorCatalog(),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Typography',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Typography Catalog',
+            builder: (context) => const TypographyCatalog(),
+          ),
+        ],
+      ),
+      WidgetbookComponent(
+        name: 'Border Radius',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Border Radius Catalog',
+            builder: (context) => const BorderRadiusCatalog(),
           ),
         ],
       ),
