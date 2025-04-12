@@ -5,6 +5,43 @@ import 'package:nova_ui_library/nova_ui_library.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NovaThemeManager.instance.initialize();
+  runApp(const WidgetBookApp());
+}
+
+// The @App annotation generates a file containing
+// a single variable called directories.
+@widgetbook.App()
+class WidgetBookApp extends StatelessWidget {
+  const WidgetBookApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Widgetbook.material(
+      directories: directories,
+      addons: [
+        MaterialThemeAddon(
+          themes: [
+            WidgetbookTheme(
+              name: 'Light',
+              data: NovaThemeManager.instance.theme,
+            ),
+          ],
+        ),
+      ],
+      appBuilder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: NovaThemeManager.instance.theme,
+          home: child,
+        );
+      },
+    );
+  }
+}
+
 final directories = [
   WidgetbookFolder(
     name: 'Design System',
@@ -47,55 +84,18 @@ final directories = [
       ),
     ],
   ),
-  // WidgetbookFolder(
-  //   name: 'Components',
-  //   children: [
-  //     WidgetbookComponent(
-  //       name: 'Buttons',
-  //       useCases: [
-  //         WidgetbookUseCase(
-  //           name: 'Button Playgroud',
-  //           builder: (context) => const SpacingCatalog(),
-  //         ),
-  //       ],
-  //     ),
-  //   ],
-  // ),
+  WidgetbookFolder(
+    name: 'Components',
+    children: [
+      WidgetbookComponent(
+        name: 'Buttons',
+        useCases: [
+          WidgetbookUseCase(
+            name: 'Button Playgroud',
+            builder: (context) => const NovaButtonPlayground(),
+          ),
+        ],
+      ),
+    ],
+  ),
 ];
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await NovaThemeManager.instance.initialize();
-  runApp(const MyApp());
-}
-
-// The @App annotation generates a file containing
-// a single variable called directories.
-@widgetbook.App()
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Widgetbook.material(
-      directories: directories,
-      addons: [
-        MaterialThemeAddon(
-          themes: [
-            WidgetbookTheme(
-              name: 'Light',
-              data: NovaThemeManager.instance.theme,
-            ),
-          ],
-        ),
-      ],
-      appBuilder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: NovaThemeManager.instance.theme,
-          home: child,
-        );
-      },
-    );
-  }
-}
