@@ -68,6 +68,7 @@ class ColorShades {
   Color get alphaBase =>
       alpha['base'] == null ? solid500 : _getAlphaColor(alpha['base'] ?? 0.0);
   Color get alpha05 => _getAlphaColor(5);
+  Color get alpha02 => _getAlphaColor(2);
 
   // Helper method to create a color with alpha
   Color _getAlphaColor(double alphaValue) {
