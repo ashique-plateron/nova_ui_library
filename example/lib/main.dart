@@ -54,6 +54,8 @@ class MyWidget extends StatelessWidget {
                 size: NovaButtonSize.medium,
                 isFullyRounded: true,
                 textColor: NovaThemeManager.instance.colors.core.novaRage,
+                icon: const Icon(Icons.keyboard_arrow_left),
+                iconAlignment: IconAlignment.end,
               ),
               NovaTertiaryButton(
                 label: 'Tertiary',

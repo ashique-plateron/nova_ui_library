@@ -91,8 +91,28 @@ final directories = [
         name: 'Buttons',
         useCases: [
           WidgetbookUseCase(
-            name: 'Button Playgroud',
-            builder: (context) => const NovaButtonPlayground(),
+            name: 'Primary Button',
+            builder: (context) => const NovaButtonPlayground(
+              type: NovaButtonType.primary,
+            ),
+          ),
+          WidgetbookUseCase(
+            name: 'Secondary Button',
+            builder: (context) => const NovaButtonPlayground(
+              type: NovaButtonType.secondary,
+            ),
+          ),
+          WidgetbookUseCase(
+            name: 'Tertiary Button',
+            builder: (context) => const NovaButtonPlayground(
+              type: NovaButtonType.tertiary,
+            ),
+          ),
+          WidgetbookUseCase(
+            name: 'Alternate Button',
+            builder: (context) => const NovaButtonPlayground(
+              type: NovaButtonType.alternate,
+            ),
           ),
         ],
       ),
