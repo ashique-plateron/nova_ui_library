@@ -1,6 +1,6 @@
 library nova_ui_library;
 
-export 'src/components/button/nova_button.dart';
+export 'src/components/button/index.dart';
 export 'src/gen/assets.gen.dart';
 export 'src/theme/app_typography.dart';
 export 'src/theme/nova_theme_extension.dart';

@@ -41,100 +41,34 @@ class MyWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 100, width: 300),
-              NovaButton(
-                type: NovaButtonType.primary,
-                label: 'Label',
+              NovaPrimaryButton(
+                label: 'Primary',
                 onPressed: () {},
                 size: NovaButtonSize.small,
                 textColor: NovaThemeManager
                     .instance.designTokens.colors.universalWhite,
               ),
-
-              NovaButton(
-                type: NovaButtonType.secondary,
-                label: 'Label',
+              NovaSecondaryButton(
+                label: 'Secondary',
                 onPressed: () {},
                 size: NovaButtonSize.medium,
                 isFullyRounded: true,
                 textColor: NovaThemeManager.instance.colors.core.novaRage,
               ),
-              NovaButton(
-                type: NovaButtonType.tertiary,
-                label: 'Label',
+              NovaTertiaryButton(
+                label: 'Tertiary',
                 onPressed: () {},
                 size: NovaButtonSize.large,
                 textColor: NovaThemeManager.instance.colors.core.novaRage,
               ),
-
-              NovaButton(
-                type: NovaButtonType.alternate,
-                label: 'Label',
+              NovaAlternateButton(
+                label: 'Alternate',
                 onPressed: () {},
                 size: NovaButtonSize.xlarge,
                 isFullyRounded: true,
                 textColor: NovaThemeManager
                     .instance.designTokens.colors.universalBlack,
               ),
-              // NovaButton(
-              //   type: NovaButtonType.tertiary,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.small,
-              //   textColor: NovaThemeManager.instance.colors.core.novaRage,
-              // ),
-              // const SizedBox(height: 30),
-              // NovaButton(
-              //   type: NovaButtonType.tertiary,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.small,
-              //   isFullyRounded: true,
-              //   textColor: NovaThemeManager.instance.colors.core.novaRage,
-              // ),
-              // NovaButton(
-              //   type: NovaButtonType.alternate,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.small,
-              //   textColor:
-              //       NovaThemeManager.instance.designTokens.colors.universalBlack,
-              // ),
-              // const SizedBox(height: 30),
-              // NovaButton(
-              //   type: NovaButtonType.alternate,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.small,
-              //   isFullyRounded: true,
-              //   textColor:
-              //       NovaThemeManager.instance.designTokens.colors.universalBlack,
-              // ),
-
-              const SizedBox(height: 300),
-              // NovaButton(
-              //   type: NovaButtonType.secondary,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.medium,
-              //   textColor: NovaThemeManager.instance.colors.core.novaRage,
-              // ),
-              // const SizedBox(height: 10),
-              // NovaButton(
-              //   type: NovaButtonType.tertiary,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.large,
-              //   textColor: NovaThemeManager.instance.colors.core.novaRage,
-              // ),
-              // const SizedBox(height: 10),
-              // NovaButton(
-              //   type: NovaButtonType.alternate,
-              //   label: 'Label',
-              //   onPressed: () {},
-              //   size: NovaButtonSize.xlarge,
-              //   textColor:
-              //       NovaThemeManager.instance.designTokens.colors.universalBlack,
-              // ),
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nova_ui_library/src/components/button/nova_button.dart';
+import 'package:nova_ui_library/nova_ui_library.dart';
+import 'package:nova_ui_library/src/components/button/nova_base_button.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 class NovaButtonPlayground extends StatelessWidget {
@@ -10,7 +11,7 @@ class NovaButtonPlayground extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Center(
-        child: NovaButton(
+        child: NovaBaseButton(
           label: 'Label',
           onPressed: () {},
           type: context.knobs.list(
@@ -41,10 +42,10 @@ class NovaButtonPlayground extends StatelessWidget {
                   size: 16,
                 )
               : null,
-          iconPosition: context.knobs.list(
+          iconAlignment: context.knobs.list(
             label: 'Icon Position',
-            options: NovaIconPosition.values,
-            initialOption: NovaIconPosition.start,
+            options: IconAlignment.values,
+            initialOption: IconAlignment.start,
           ),
         ),
       ),
