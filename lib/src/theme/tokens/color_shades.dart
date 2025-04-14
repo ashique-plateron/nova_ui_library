@@ -72,6 +72,6 @@ class ColorShades {
 
   // Helper method to create a color with alpha
   Color _getAlphaColor(double alphaValue) {
-    return baseColor.withValues(alpha: alphaValue);
+    return baseColor.withOpacity(alphaValue / 100);
   }
 }

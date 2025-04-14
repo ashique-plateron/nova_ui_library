@@ -22,18 +22,18 @@ class NovaButtonPlayground extends StatelessWidget {
             label: 'Fully-rounded?',
             initialValue: true,
           ),
-          state: context.knobs.list(
-            label: 'State',
-            options: NovaButtonState.values,
-            initialOption: NovaButtonState.focused,
-          ),
+          //  state : context.knobs.list(
+          //     label: 'State',
+          //     options: NovaButtonState.values,
+          //     initialOption: NovaButtonState.focused,
+          //   ),
           size: context.knobs.list(
             label: 'Size',
             options: NovaButtonSize.values,
             initialOption: NovaButtonSize.medium,
           ),
-          suffixIcon: context.knobs.boolean(
-            label: 'Icon-append?',
+          icon: context.knobs.boolean(
+            label: 'Show icon?',
             initialValue: true,
           )
               ? const Icon(
@@ -41,15 +41,11 @@ class NovaButtonPlayground extends StatelessWidget {
                   size: 16,
                 )
               : null,
-          prefixIcon: context.knobs.boolean(
-            label: 'Icon-prepend?',
-            initialValue: true,
-          )
-              ? const Icon(
-                  Icons.keyboard_arrow_left,
-                  size: 16,
-                )
-              : null,
+          iconPosition: context.knobs.list(
+            label: 'Icon Position',
+            options: NovaIconPosition.values,
+            initialOption: NovaIconPosition.start,
+          ),
         ),
       ),
     );

@@ -34,8 +34,8 @@ class AppTypoGraphy {
     return AppTypoGraphy(
       xtremeXs: UnifiedTextStyles(
         fontSize: tokens.fontSize.xxs,
-        height: tokens.lineHeight.xxsParagraph,
         letterSpacing: tokens.letterSpacing.defaultValue,
+        height: tokens.lineHeight.xxsParagraph / tokens.fontSize.xxs,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -43,7 +43,7 @@ class AppTypoGraphy {
       xs3: UnifiedTextStyles(
         fontSize: tokens.fontSize.xs3,
         letterSpacing: tokens.letterSpacing.defaultValue,
-        height: tokens.lineHeight.xs3Paragraph,
+        height: tokens.lineHeight.xs3Paragraph / tokens.fontSize.xs3,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -51,7 +51,7 @@ class AppTypoGraphy {
       xs2: UnifiedTextStyles(
         fontSize: tokens.fontSize.xs2,
         letterSpacing: tokens.letterSpacing.defaultValue,
-        height: tokens.lineHeight.xs2Paragraph,
+        height: tokens.lineHeight.xs2Paragraph / tokens.fontSize.xs2,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -59,7 +59,7 @@ class AppTypoGraphy {
       xs: UnifiedTextStyles(
         fontSize: tokens.fontSize.xs,
         letterSpacing: tokens.letterSpacing.concise,
-        height: tokens.lineHeight.xsParagraph,
+        height: tokens.lineHeight.xsParagraph / tokens.fontSize.xs,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -67,7 +67,7 @@ class AppTypoGraphy {
       s: UnifiedTextStyles(
         fontSize: tokens.fontSize.s,
         letterSpacing: tokens.letterSpacing.concise,
-        height: tokens.lineHeight.sParagraph,
+        height: tokens.lineHeight.sParagraph / tokens.fontSize.s,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -75,7 +75,7 @@ class AppTypoGraphy {
       m: UnifiedTextStyles(
         fontSize: tokens.fontSize.m,
         letterSpacing: tokens.letterSpacing.concise,
-        height: tokens.lineHeight.mParagraph,
+        height: tokens.lineHeight.mParagraph / tokens.fontSize.m,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -83,7 +83,7 @@ class AppTypoGraphy {
       l: UnifiedTextStyles(
         fontSize: tokens.fontSize.l,
         letterSpacing: tokens.letterSpacing.concise,
-        height: tokens.lineHeight.lParagraph,
+        height: tokens.lineHeight.lParagraph / tokens.fontSize.l,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -91,7 +91,7 @@ class AppTypoGraphy {
       xl: UnifiedTextStyles(
         fontSize: tokens.fontSize.xl,
         letterSpacing: tokens.letterSpacing.concise,
-        height: tokens.lineHeight.xlParagraph,
+        height: tokens.lineHeight.xlParagraph / tokens.fontSize.xl,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -99,7 +99,7 @@ class AppTypoGraphy {
       xl2: UnifiedTextStyles(
         fontSize: tokens.fontSize.xl2,
         letterSpacing: tokens.letterSpacing.compact,
-        height: tokens.lineHeight.xl2Paragraph,
+        height: tokens.lineHeight.xl2Paragraph / tokens.fontSize.xl2,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -107,7 +107,7 @@ class AppTypoGraphy {
       xl3: UnifiedTextStyles(
         fontSize: tokens.fontSize.xl3,
         letterSpacing: tokens.letterSpacing.compact,
-        height: tokens.lineHeight.xl3Paragraph,
+        height: tokens.lineHeight.xl3Paragraph / tokens.fontSize.xl3,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -115,7 +115,7 @@ class AppTypoGraphy {
       xl4: UnifiedTextStyles(
         fontSize: tokens.fontSize.xl4,
         letterSpacing: tokens.letterSpacing.ultraCompact,
-        height: tokens.lineHeight.xl4Paragraph,
+        height: tokens.lineHeight.xl4Paragraph / tokens.fontSize.xl4,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
@@ -123,7 +123,7 @@ class AppTypoGraphy {
       xl5: UnifiedTextStyles(
         fontSize: tokens.fontSize.xl5,
         letterSpacing: tokens.letterSpacing.ultraCompact,
-        height: tokens.lineHeight.xl5Paragraph,
+        height: tokens.lineHeight.xl5Paragraph / tokens.fontSize.xl5,
         fontWeight: FontWeight.w400,
         color: tokens.colors.universalBlack,
         fontFamily: tokens.fontFamily.inter,
