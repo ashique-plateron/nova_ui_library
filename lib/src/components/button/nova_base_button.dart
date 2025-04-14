@@ -74,6 +74,7 @@ class NovaBaseButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       icon: icon,
+      iconAlignment: iconAlignment,
       style: ButtonStyle(
         minimumSize: WidgetStatePropertyAll(_getMinSize),
         shadowColor: WidgetStatePropertyAll(shadowColor),
