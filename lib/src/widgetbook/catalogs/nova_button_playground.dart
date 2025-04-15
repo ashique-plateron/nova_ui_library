@@ -3,11 +3,8 @@ import 'package:nova_ui_library/nova_ui_library.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 class NovaButtonPlayground extends StatelessWidget {
-  final NovaButtonType type;
-
   const NovaButtonPlayground({
     super.key,
-    required this.type,
   });
 
   @override
@@ -15,12 +12,16 @@ class NovaButtonPlayground extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Center(
-        child: switch (type) {
-          NovaButtonType.primary => const NovaButtonPrimary(),
-          NovaButtonType.secondary => const NovaButtonSecondary(),
-          NovaButtonType.tertiary => const NovaButtonTertiary(),
-          NovaButtonType.alternate => const NovaButtonAlternate(),
-        },
+        child: context.knobs.list(
+          label: 'Button type',
+          options: [
+            const NovaButtonPrimary(),
+            const NovaButtonSecondary(),
+            const NovaButtonTertiary(),
+            const NovaButtonAlternate(),
+          ],
+          initialOption: const NovaButtonPrimary(),
+        ),
       ),
     );
   }
