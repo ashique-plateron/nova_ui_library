@@ -32,6 +32,49 @@ flutter:
     - assets/design-tokens.json
     - assets/icons/specialized_icons/
     - assets/icons/svg/
+    - assets/fonts/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter-Black.ttf
+          weight: 900
+    - family: RobotoMono
+      fonts:
+        - asset: assets/fonts/RobotoMono-Light.ttf
+          weight: 100
+        - asset: assets/fonts/RobotoMono-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/RobotoMono-Light.ttf
+          weight: 300
+        - asset: assets/fonts/RobotoMono-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/RobotoMono-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/RobotoMono-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/RobotoMono-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/RobotoMono-Bold.ttf
+          weight: 800
+        - asset: assets/fonts/RobotoMono-Bold.ttf
+          weight: 900
 
 flutter_gen:
   output: lib/src/gen

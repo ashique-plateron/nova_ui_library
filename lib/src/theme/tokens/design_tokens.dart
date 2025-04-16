@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:nova_ui_library/src/theme/tokens/font_family.dart';
 
 import 'border_radius_tokens.dart';
 import 'color_tokens.dart';
@@ -18,7 +17,6 @@ class NovaDesignTokens {
   final LineHeightTokens lineHeight;
   final LetterSpacingTokens letterSpacing;
   final SpacingTokens spacing;
-  final NovaFontFamily fontFamily;
 
   const NovaDesignTokens({
     required this.borderRadius,
@@ -27,7 +25,6 @@ class NovaDesignTokens {
     required this.lineHeight,
     required this.letterSpacing,
     required this.spacing,
-    required this.fontFamily,
   });
 
   static Future<NovaDesignTokens> fromAsset() async {
@@ -43,8 +40,88 @@ class NovaDesignTokens {
       lineHeight: LineHeightTokens.fromJson(jsonMap['line-height']),
       letterSpacing: LetterSpacingTokens.fromJson(jsonMap['letter-spacing']),
       spacing: SpacingTokens.fromJson(jsonMap['spacing']),
-      //! Add font family tokens here
-      fontFamily: NovaFontFamily(inter: 'Inter'),
     );
+  }
+
+  // Add a method to ensure the fonts are loaded
+  static Future<void> loadFonts() async {
+    // This is a workaround to ensure fonts are loaded
+    // Flutter doesn't provide a direct API to preload fonts
+    // But we can create temporary FontLoader instances to ensure they're loaded
+    final interLoader = FontLoader('Inter')
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-Black.ttf'),
+      )
+      ..addFont(
+        rootBundle.load('packages/nova_ui_library/assets/fonts/Inter-Bold.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-ExtraBold.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-ExtraLight.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-Light.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-Medium.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-Regular.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/Inter-SemiBold.ttf'),
+      )
+      ..addFont(
+        rootBundle.load('packages/nova_ui_library/assets/fonts/Inter-Thin.ttf'),
+      );
+    final robotoLoader = FontLoader('RobotoMono')
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/RobotoMono-Light.ttf'),
+      )
+      ..addFont(
+        rootBundle.load(
+            'packages/nova_ui_library/assets/fonts/RobotoMono-ExtraLight.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/RobotoMono-Light.ttf'),
+      )
+      ..addFont(
+        rootBundle.load(
+            'packages/nova_ui_library/assets/fonts/RobotoMono-Regular.ttf'),
+      )
+      ..addFont(
+        rootBundle.load(
+            'packages/nova_ui_library/assets/fonts/RobotoMono-Medium.ttf'),
+      )
+      ..addFont(
+        rootBundle.load(
+            'packages/nova_ui_library/assets/fonts/RobotoMono-SemiBold.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/RobotoMono-Bold.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/RobotoMono-Bold.ttf'),
+      )
+      ..addFont(
+        rootBundle
+            .load('packages/nova_ui_library/assets/fonts/RobotoMono-Bold.ttf'),
+      );
+
+    await interLoader.load();
+    await robotoLoader.load();
   }
 }
