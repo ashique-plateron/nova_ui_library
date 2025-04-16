@@ -15,11 +15,11 @@
 		},
 		{
 			"type": "shell",
-			"command": "cd example && flutter build web -t lib/widgetbook/widgetbook.dart",
+			"command": "cd example && flutter build web -t lib/widgetbook/widgetbook.dart && firebase deploy --only hosting",
 			"group": "build",
 			"problemMatcher": [],
-			"label": "flutter: Build widgetbook web app",
-			"detail": ""
+			"label": "flutter: Build widgetbook web app and deploy to Firebase",
+			"detail": "Builds the widgetbook web app from the example application and deploys it to Firebase hosting",			
 		},
 		{
 			"type": "shell",

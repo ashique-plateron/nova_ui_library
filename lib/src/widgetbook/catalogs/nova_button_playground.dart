@@ -10,9 +10,9 @@ class NovaButtonPlayground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var themeManager = NovaThemeManager.instance;
-    return Container(
-      color: Colors.white,
-      child: Center(
+    return Scaffold(
+      backgroundColor: const Color(0xFFE2E0E9),
+      body: Center(
         child: Builder(
           builder: (context) {
             final selectedButtonTypeString = context.knobs.list(
@@ -23,25 +23,61 @@ class NovaButtonPlayground extends StatelessWidget {
               initialOption: NovaButtonType.primary.name.toUpperCase(),
             );
 
-            var selectedButtonType = switch (selectedButtonTypeString) {
-              'PRIMARY' => NovaButtonType.primary,
-              'SECONDARY' => NovaButtonType.secondary,
-              'TERTIARY' => NovaButtonType.tertiary,
-              'ALTERNATE' => NovaButtonType.alternate,
-              _ => NovaButtonType.primary,
-            };
-            // Common button configuration properties
-            final isFullyRounded = context.knobs.boolean(
-              label: 'Fully-rounded?',
-              initialValue: false,
+            var label = context.knobs.string(
+              label: 'Label',
+              initialValue: 'Label',
             );
-
+            final textColorString = context.knobs.list(
+              label: 'Text color',
+              options: [
+                'White',
+                'Black',
+                'Bronze',
+                'Rage',
+              ],
+              initialOption: 'White',
+            );
+            final textStyleString = context.knobs.list(
+              label: 'Text style',
+              options: [
+                'Small',
+                'Medium',
+                'Large',
+                'XLarge',
+              ],
+              initialOption: null,
+            );
             final sizeString = context.knobs.list(
               label: 'Size',
               options: NovaButtonSize.values
                   .map((e) => e.name.toUpperCase())
                   .toList(),
               initialOption: NovaButtonSize.medium.name.toUpperCase(),
+            );
+            final showIcon = context.knobs.boolean(
+              label: 'Show icon?',
+              initialValue: false,
+            );
+            final iconColorText = context.knobs.list(
+              label: 'Icon color',
+              options: [
+                'White',
+                'Black',
+                'Rage',
+                'Bronze',
+              ],
+              initialOption: 'White',
+            );
+            final iconSize = context.knobs.list(
+              label: 'Icon size',
+              options: [16.0, 24.0, 32.0],
+              initialOption: 16.0,
+            );
+
+            // Common button configuration properties
+            final isFullyRounded = context.knobs.boolean(
+              label: 'Fully-rounded?',
+              initialValue: false,
             );
 
             var size = switch (sizeString) {
@@ -51,16 +87,6 @@ class NovaButtonPlayground extends StatelessWidget {
               'XLARGE' => NovaButtonSize.xlarge,
               _ => NovaButtonSize.medium,
             };
-            final iconSize = context.knobs.list(
-              label: 'Icon size',
-              options: [16.0, 24.0, 32.0],
-              initialOption: 16.0,
-            );
-
-            final showIcon = context.knobs.boolean(
-              label: 'Show icon?',
-              initialValue: false,
-            );
 
             final icon = showIcon
                 ? context.knobs.list(
@@ -91,19 +117,14 @@ class NovaButtonPlayground extends StatelessWidget {
               'END' => IconAlignment.end,
               _ => IconAlignment.start,
             };
+            var selectedButtonType = switch (selectedButtonTypeString) {
+              'PRIMARY' => NovaButtonType.primary,
+              'SECONDARY' => NovaButtonType.secondary,
+              'TERTIARY' => NovaButtonType.tertiary,
+              'ALTERNATE' => NovaButtonType.alternate,
+              _ => NovaButtonType.primary,
+            };
 
-            final iconColorText = selectedButtonType == NovaButtonType.primary
-                ? context.knobs.list(
-                    label: 'Icon color',
-                    options: [
-                      'White',
-                      'Black',
-                      'Rage',
-                      'Bronze',
-                    ],
-                    initialOption: 'White',
-                  )
-                : null;
             var iconColor = switch (iconColorText) {
               'Rage' => context.novaTokens.colors.novaRage.baseColor,
               'Bronze' => context.novaTokens.colors.novaBronze,
@@ -112,19 +133,6 @@ class NovaButtonPlayground extends StatelessWidget {
               _ => context.novaTokens.colors.universalWhite,
             };
 
-            final textColorString = context.knobs.list(
-              label: 'Text color',
-              options: [
-                'White',
-                'Black',
-                'Bronze',
-                'Rage',
-              ],
-              initialOption: selectedButtonType == NovaButtonType.primary
-                  ? 'White'
-                  : context.novaTokens.colors.universalBlack,
-            );
-
             var textColor = switch (textColorString) {
               'White' => context.novaTokens.colors.universalWhite,
               'Black' => context.novaTokens.colors.universalBlack,
@@ -132,17 +140,6 @@ class NovaButtonPlayground extends StatelessWidget {
               'Rage' => context.novaTokens.colors.novaRage.baseColor,
               _ => context.novaTokens.colors.universalWhite,
             };
-
-            final textStyleString = context.knobs.list(
-              label: 'Text style',
-              options: [
-                'Small',
-                'Medium',
-                'Large',
-                'XLarge',
-              ],
-              initialOption: null,
-            );
 
             var textStyle = switch (textStyleString) {
               'Small' => themeManager.textStyles.s,
@@ -156,7 +153,7 @@ class NovaButtonPlayground extends StatelessWidget {
             switch (selectedButtonType) {
               case NovaButtonType.primary:
                 return NovaPrimaryButton(
-                  label: 'Label',
+                  label: label,
                   onPressed: () {},
                   isFullyRounded: isFullyRounded,
                   size: size,
@@ -169,7 +166,7 @@ class NovaButtonPlayground extends StatelessWidget {
                 );
               case NovaButtonType.secondary:
                 return NovaSecondaryButton(
-                  label: 'Label',
+                  label: label,
                   onPressed: () {},
                   isFullyRounded: isFullyRounded,
                   size: size,
@@ -182,7 +179,7 @@ class NovaButtonPlayground extends StatelessWidget {
                 );
               case NovaButtonType.tertiary:
                 return NovaTertiaryButton(
-                  label: 'Label',
+                  label: label,
                   onPressed: () {},
                   isFullyRounded: isFullyRounded,
                   size: size,
@@ -195,7 +192,7 @@ class NovaButtonPlayground extends StatelessWidget {
                 );
               case NovaButtonType.alternate:
                 return NovaAlternateButton(
-                  label: 'Label',
+                  label: label,
                   onPressed: () {},
                   isFullyRounded: isFullyRounded,
                   size: size,
