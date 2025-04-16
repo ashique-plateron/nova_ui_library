@@ -33,3 +33,4 @@ migrate_working_dir/
 build/
 .firebase/hosting.ZXhhbXBsZS9idWlsZC93ZWI.cache
 .firebase/
+.firebase/*.cache

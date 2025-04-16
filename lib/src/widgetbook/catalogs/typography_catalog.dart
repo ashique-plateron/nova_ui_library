@@ -29,9 +29,9 @@ class _TypographyCatalogState extends State<TypographyCatalog> {
           const SizedBox(height: 32),
           _buildTextStyleSection(
               'Extreme Extra Small (XXS)', textStyles.xtremeXs),
+          _buildTextStyleSection('Extra Small (XS)', textStyles.xs),
           _buildTextStyleSection('Extra Small 3 (XS3)', textStyles.xs3),
           _buildTextStyleSection('Extra Small 2 (XS2)', textStyles.xs2),
-          _buildTextStyleSection('Extra Small (XS)', textStyles.xs),
           _buildTextStyleSection('Small (S)', textStyles.s),
           _buildTextStyleSection('Medium (M)', textStyles.m),
           _buildTextStyleSection('Large (L)', textStyles.l),
