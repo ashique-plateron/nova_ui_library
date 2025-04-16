@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nova_ui_library/nova_ui_library.dart';
+import 'package:widgetbook/widgetbook.dart';
 
-class TypographyCatalog extends StatelessWidget {
+class TypographyCatalog extends StatefulWidget {
   const TypographyCatalog({super.key});
 
+  @override
+  State<TypographyCatalog> createState() => _TypographyCatalogState();
+}
+
+class _TypographyCatalogState extends State<TypographyCatalog> {
   @override
   Widget build(BuildContext context) {
     final textStyles = NovaThemeManager.instance.textStyles;
@@ -117,7 +123,16 @@ class TypographyCatalog extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               'The quick brown fox jumps over the lazy dog',
-              style: style,
+              style: style.copyWith(
+                fontFamily: context.knobs.list(
+                  label: "Font Family",
+                  options: [
+                    'Inter',
+                    'RobotoMono',
+                  ],
+                  initialOption: 'Inter',
+                ),
+              ),
             ),
           ],
         ),
