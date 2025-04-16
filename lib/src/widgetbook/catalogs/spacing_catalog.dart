@@ -141,7 +141,7 @@ class SpacingCatalog extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -161,7 +161,7 @@ class SpacingCatalog extends StatelessWidget {
           Container(
             width: value,
             height: NovaThemeManager.instance.designTokens.spacing.x14,
-            color: NovaThemeManager.instance.colors.core.novaRage,
+            color: NovaThemeManager.instance.colors.core.novaRage.baseColor,
           ),
         ],
       ),

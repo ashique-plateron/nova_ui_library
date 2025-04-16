@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:nova_ui_library/src/theme/tokens/color_shades.dart';
 import 'package:nova_ui_library/src/theme/tokens/color_tokens.dart';
 
 class CoreColors {
-  final Color novaRage;
-  final Color novaBlush;
-  final Color morningFog;
-  final Color midnightBlack;
-  final Color lilacHaze;
+  final ColorShades novaRage;
+  final ColorShades novaBlush;
+  final ColorShades morningFog;
+  final ColorShades midnightBlack;
+  final ColorShades lilacHaze;
   final SemanticColors semantics;
 
   CoreColors({
@@ -20,11 +21,11 @@ class CoreColors {
 
   factory CoreColors.fromToken(ColorTokens tokens) {
     return CoreColors(
-      novaRage: tokens.novaRage.baseColor,
-      novaBlush: tokens.novaBlush.baseColor,
-      morningFog: tokens.morningFog.baseColor,
-      midnightBlack: tokens.midnightBlack.baseColor,
-      lilacHaze: tokens.lilacHaze.baseColor,
+      novaRage: tokens.novaRage,
+      novaBlush: tokens.novaBlush,
+      morningFog: tokens.morningFog,
+      midnightBlack: tokens.midnightBlack,
+      lilacHaze: tokens.lilacHaze,
       semantics: SemanticColors(
         novaSky: tokens.novaSky.baseColor,
         novaSkyAplha10: tokens.novaSky.alpha10,

@@ -54,7 +54,8 @@ class MyWidget extends StatelessWidget {
                 onPressed: () {},
                 size: NovaButtonSize.medium,
                 isFullyRounded: true,
-                textColor: NovaThemeManager.instance.colors.core.novaRage,
+                textColor:
+                    NovaThemeManager.instance.colors.core.novaRage.baseColor,
                 icon: const Icon(Icons.keyboard_arrow_left),
                 iconAlignment: IconAlignment.end,
               ),
@@ -62,7 +63,8 @@ class MyWidget extends StatelessWidget {
                 label: 'Tertiary',
                 onPressed: () {},
                 size: NovaButtonSize.large,
-                textColor: NovaThemeManager.instance.colors.core.novaRage,
+                textColor:
+                    NovaThemeManager.instance.colors.core.novaRage.baseColor,
               ),
               NovaAlternateButton(
                 label: 'Alternate',
