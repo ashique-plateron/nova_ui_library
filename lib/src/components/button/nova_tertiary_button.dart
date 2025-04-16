@@ -16,6 +16,7 @@ class NovaTertiaryButton extends NovaBaseButton {
     super.iconAlignment,
     super.iconSize,
     super.overlayColor,
+    super.textStyle,
   }) : super(
           type: NovaButtonType.secondary,
           elevation: 0,

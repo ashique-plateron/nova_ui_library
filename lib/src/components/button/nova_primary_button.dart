@@ -16,6 +16,7 @@ class NovaPrimaryButton extends NovaBaseButton {
     super.iconAlignment,
     super.iconSize,
     super.overlayColor,
+    super.textStyle,
   }) : super(
           type: NovaButtonType.primary,
           elevation: 0,

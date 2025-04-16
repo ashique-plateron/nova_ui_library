@@ -42,6 +42,8 @@ class NovaBaseButton extends StatelessWidget {
   /// The color of the icon
   final Color? iconColor;
 
+  final UnifiedTextStyles? textStyle;
+
   /// Creates a new NovaButton
   const NovaBaseButton({
     super.key,
@@ -58,6 +60,7 @@ class NovaBaseButton extends StatelessWidget {
     this.overlayColor,
     this.iconSize,
     this.iconColor,
+    this.textStyle,
   });
 
   bool get isDisabled => onPressed == null;
@@ -68,9 +71,12 @@ class NovaBaseButton extends StatelessWidget {
     return ElevatedButton.icon(
       label: Text(
         label,
-        style: _getTextStyle.copyWith(
-          color: textColor,
-        ),
+        style: textStyle?.copyWith(
+              color: textColor,
+            ) ??
+            _getTextStyle.copyWith(
+              color: textColor,
+            ),
       ),
       onPressed: onPressed,
       icon: icon,
