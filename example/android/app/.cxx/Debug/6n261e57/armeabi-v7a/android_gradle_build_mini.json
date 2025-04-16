@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/122ashique/Development/flutter_v3.29.2/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/122ashique/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/122ashique/Plateron_projects/nova_ui_library/example/android/app/.cxx/Debug/6n261e57/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/122ashique/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/122ashique/Plateron_projects/nova_ui_library/example/android/app/.cxx/Debug/6n261e57/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

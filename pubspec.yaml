@@ -29,8 +29,9 @@ flutter:
         pluginClass: somePluginClass
   uses-material-design: true
   assets:
-    - assets/icons/icons_24x24/
     - assets/design-tokens.json
+    - assets/icons/specialized_icons/
+    - assets/icons/svg/
 
 flutter_gen:
   output: lib/src/gen

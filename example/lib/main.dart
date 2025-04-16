@@ -32,7 +32,8 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE2E0E9),
+      backgroundColor:
+          NovaThemeManager.instance.designTokens.colors.universalWhite,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -71,6 +72,93 @@ class MyWidget extends StatelessWidget {
                 textColor: NovaThemeManager
                     .instance.designTokens.colors.universalBlack,
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  spacing: 20,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    Text(
+                      "Svg Icons",
+                      style: NovaThemeManager.instance.textStyles.xl4.extraBold,
+                    ),
+                    const SizedBox(height: 40),
+                    Text(
+                      "16px Icons",
+                      style: NovaThemeManager.instance.textStyles.xl2.semiBold,
+                    ),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: Assets.icons.svg.values
+                          .where((e) => e.keyName.contains('_16'))
+                          .map((e) {
+                        return Column(
+                          spacing: 10,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            e.svg(),
+                            const SizedBox(height: 4),
+                            Text(e.keyName.split('/').last.split('.').first),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+
+                    const SizedBox(height: 40),
+                    Text(
+                      "24px Icons",
+                      style: NovaThemeManager.instance.textStyles.xl2.semiBold,
+                    ),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: Assets.icons.svg.values
+                          .where((e) => e.keyName.contains('_24'))
+                          .map((e) {
+                        return Column(
+                          children: [
+                            e.svg(),
+                            const SizedBox(height: 4),
+                            Text(e.keyName.split('/').last.split('.').first),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+
+                    ///"Specialized Icons",
+                    const SizedBox(height: 40),
+                    Text(
+                      "Specialized Icons",
+                      style: NovaThemeManager.instance.textStyles.xl2.extraBold,
+                    ),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: Assets.icons.specializedIcons.values.map((e) {
+                        return Column(
+                          children: [
+                            e.svg(),
+                            const SizedBox(height: 4),
+                            Text(
+                              e.keyName.split('/').last.split('.').first,
+                              style: NovaThemeManager.instance.textStyles.xs
+                                  .copyWith(
+                                color: NovaThemeManager.instance.designTokens
+                                    .colors.universalBlack,
+                              ),
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 40),
+                  ],
+                ),
+              )
             ],
           ),
         ),
