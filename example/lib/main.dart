@@ -31,28 +31,136 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(
-        context.novaTokens.spacing.x20,
-      ),
-      margin: EdgeInsets.all(
-        context.novaTokens.spacing.x16,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          context.novaTokens.borderRadius.xl,
-        ),
-        color: context.novaTokens.colors.novaRage.baseColor,
-      ),
-      child: Center(
-        child: TextButton(
-          onPressed: () {},
-          child: Row(
+    return Scaffold(
+      backgroundColor:
+          NovaThemeManager.instance.designTokens.colors.universalWhite,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            spacing: 10,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'Hello Nova',
-                style: NovaThemeManager.instance.textStyles.s.regular,
+              const SizedBox(height: 100, width: 300),
+              NovaPrimaryButton(
+                label: 'Primary',
+                onPressed: () {},
+                size: NovaButtonSize.small,
+                textColor: NovaThemeManager
+                    .instance.designTokens.colors.universalWhite,
               ),
+              NovaSecondaryButton(
+                label: 'Secondary',
+                onPressed: () {},
+                size: NovaButtonSize.medium,
+                isFullyRounded: true,
+                textColor:
+                    NovaThemeManager.instance.colors.core.novaRage.baseColor,
+                icon: const Icon(Icons.keyboard_arrow_left),
+                iconAlignment: IconAlignment.end,
+              ),
+              NovaTertiaryButton(
+                label: 'Tertiary',
+                onPressed: () {},
+                size: NovaButtonSize.large,
+                textColor:
+                    NovaThemeManager.instance.colors.core.novaRage.baseColor,
+              ),
+              NovaAlternateButton(
+                label: 'Alternate',
+                onPressed: () {},
+                size: NovaButtonSize.xlarge,
+                isFullyRounded: true,
+                textColor: NovaThemeManager
+                    .instance.designTokens.colors.universalBlack,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  spacing: 20,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    Text(
+                      "Svg Icons",
+                      style: NovaThemeManager.instance.textStyles.xl4.extraBold,
+                    ),
+                    const SizedBox(height: 40),
+                    Text(
+                      "16px Icons",
+                      style: NovaThemeManager.instance.textStyles.xl2.semiBold,
+                    ),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: Assets.icons.svg.values
+                          .where((e) => e.keyName.contains('_16'))
+                          .map((e) {
+                        return Column(
+                          spacing: 10,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            e.svg(),
+                            const SizedBox(height: 4),
+                            Text(e.keyName.split('/').last.split('.').first),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+
+                    const SizedBox(height: 40),
+                    Text(
+                      "24px Icons",
+                      style: NovaThemeManager.instance.textStyles.xl2.semiBold,
+                    ),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: Assets.icons.svg.values
+                          .where((e) => e.keyName.contains('_24'))
+                          .map((e) {
+                        return Column(
+                          children: [
+                            e.svg(),
+                            const SizedBox(height: 4),
+                            Text(e.keyName.split('/').last.split('.').first),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+
+                    ///"Specialized Icons",
+                    const SizedBox(height: 40),
+                    Text(
+                      "Specialized Icons",
+                      style: NovaThemeManager.instance.textStyles.xl2.extraBold,
+                    ),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: Assets.icons.specializedIcons.values.map((e) {
+                        return Column(
+                          children: [
+                            e.svg(),
+                            const SizedBox(height: 4),
+                            Text(
+                              e.keyName.split('/').last.split('.').first,
+                              style: NovaThemeManager.instance.textStyles.xs
+                                  .copyWith(
+                                color: NovaThemeManager.instance.designTokens
+                                    .colors.universalBlack,
+                              ),
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 40),
+                  ],
+                ),
+              )
             ],
           ),
         ),

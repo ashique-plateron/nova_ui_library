@@ -65,11 +65,13 @@ class ColorShades {
   Color get alpha70 => _getAlphaColor(70);
   Color get alpha80 => _getAlphaColor(80);
   Color get alpha90 => _getAlphaColor(90);
-  Color get alphaBase => _getAlphaColor(alpha['base'] ?? 0.0);
+  Color get alphaBase =>
+      alpha['base'] == null ? solid500 : _getAlphaColor(alpha['base'] ?? 0.0);
   Color get alpha05 => _getAlphaColor(5);
+  Color get alpha02 => _getAlphaColor(2);
 
   // Helper method to create a color with alpha
   Color _getAlphaColor(double alphaValue) {
-    return baseColor.withValues(alpha: alphaValue);
+    return baseColor.withOpacity(alphaValue / 100);
   }
 }
